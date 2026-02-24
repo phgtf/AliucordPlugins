@@ -16,7 +16,7 @@ import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAttachment
 @AliucordPlugin
 class AttachmentUtils : Plugin() {
 
-    override fun start(context: Context?) {
+    override fun start(context: Context) {
         patcher.patch(
             WidgetChatListAdapterItemAttachment::class.java.getDeclaredMethod(
                 "configureFileData",
@@ -39,7 +39,7 @@ class AttachmentUtils : Plugin() {
         )
     }
 
-    override fun stop(context: Context?) {
+    override fun stop(context: Context) {
         patcher.unpatchAll()
     }
 
